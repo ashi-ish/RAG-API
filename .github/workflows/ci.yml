@@ -24,6 +24,9 @@ jobs:
         run: |
           pip install fastapi uvicorn chromadb requests
 
+      - name: Clean old database
+        run: rm -rf db/
+
       - name: Rebuild embeddings
         run: python embed_docs.py  # Changed from embed.py
 
